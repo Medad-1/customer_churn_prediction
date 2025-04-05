@@ -1,0 +1,40 @@
+<!-- result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churn Prediction Result</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 font-sans flex justify-center items-center h-screen bg-cover bg-center text-white" style="background-image: url('https://images.unsplash.com/photo-1549921296-3a6bde9f9b8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');">
+
+    <!-- Result Card -->
+    <div class="bg-white/90 text-gray-800 p-8 rounded-2xl shadow-2xl max-w-sm w-full backdrop-blur-md border border-white/30">
+        <h2 class="text-3xl font-extrabold text-center text-blue-800 mb-6">Churn Prediction</h2>
+
+        <!-- Prediction Icon -->
+        <div class="flex justify-center mb-4">
+            <img src="https://cdn-icons-png.flaticon.com/512/1149/1149168.png" alt="Prediction Icon" class="h-20 w-20 object-cover rounded-full border-4 border-blue-100 shadow-md">
+        </div>
+
+        <!-- Prediction Result -->
+        <div class="text-center mb-6">
+            <p class="text-lg text-gray-700">
+                The customer is likely to churn:
+                <span class="font-bold text-xl text-{{ 'red' if prediction else 'green' }}-600">
+                    {{ prediction | capitalize }}
+                </span>
+            </p>
+        </div>
+
+        <!-- Back Button -->
+        <div class="text-center">
+            <a href="/" class="text-blue-600 hover:underline font-semibold transition duration-200 hover:text-blue-800">
+                ⬅️ Back to Form
+            </a>
+        </div>
+    </div>
+</body>
+</html>
